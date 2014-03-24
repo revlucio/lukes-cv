@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Luke Elliott's CV</title>
+
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="site.css">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>Luke Elliott <small>Senior .NET Developer</small></h1>
+		</header>
+
+		<div id="test">
+		</div>
+
+		<h2>Experience</h2>
+
+		<article>
+			<h3>Collinson Technology Services <small>Senior Developer</small></h3>
+			<p>Feb 2014 - Present</p>
+			<ul>
+				<li>worked on insurance purchase portal</li>
+				<li>build overnight processor for direct debits</li>
+			</ul>
+		</article>
+
+		<article>
+			<h3>AS&amp;K Digital <small>Senior Developer</small></h3>
+			<p>Nov 2013 - Feb 2014</p>
+			<ul>
+				<li>led a team of .net developers</li>
+				<li>setup a build server and moved projects towards continuous delivery</li>
+				<li>brough up the team to follow Scrum and agile processes</li>
+			</ul>
+		</article>
+
+		<article>
+			<h3>Department of Industry (Australia) <small>Contract .NET Developer</small></h3>
+			<p>Oct 2012 - Jun 2013</p>
+			<ul>
+				<li>worked on USI project</li>
+				<li>build public-facing web services</li>
+			</ul>
+		</article>
+
+		<article>
+			<h3>Department of Industry (Australia) <small>Contract .NET Developer</small></h3>
+			<p>Mar 2012 - Jun 2012</p>
+			<ul>
+				<li>worked on VANGuard project</li>
+				<li>built logging points for data warhousing</li>
+				<li>fixed event log overkill</li>
+			</ul>
+		</article>
+
+		<article>
+			<h3>Fujitsu Australia Limited <small>.NET Developer</small></h3>
+			<p>Jun 2009 - Mar 2012</p>
+			<ul>
+				<li>worked on projects for the Australian Intelligence Community</li>
+			</ul>
+		</article>
+
+		<article>
+			<h3>KAZ Group <small>.NET Developer</small></h3>
+			<p>Feb 2008 - Jun 2009</p>
+			<ul>
+				<li>worked on projects for the Australian Intelligence Community</li>
+			</ul>
+		</article>
+
+		<article>
+			<h3>Department of Workplace Relations (Australia) <small>Release and Technical Support Officer</small></h3>
+			<p>Apr 2008 - Dec 2008</p>
+			<ul>
+				<li>worked on projects for the Australian Intelligence Community</li>
+			</ul>
+		</article>
+	</div>
+
+	<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js"></script>
+	<script src="handlebars-v1.3.0.js" type="text/javascript"></script>
+
+	<script id="entry-template" type="text/x-handlebars-template">
+	  	<article>
+			<h3>{{company}} <small>{{role}}</small></h3>
+			<p>{{started}} - {{ended}}</p>
+			{{#list duties}}{{duty}}{{/list}}
+		</article>
+	</script>
+
+	<script type="text/javascript">
+	  	var source   = $("#entry-template").html();
+		var template = Handlebars.compile(source);
+		var context = {
+			company: "Collinson Technology Services", 
+			role: "Senior Developer",
+			started: "Feb 2014",
+			ended: "Present",
+			duties: [
+				{ duty: "worked on insurance purchase portal" },
+				{ duty: "build overnight processor for direct debits" }
+			]
+		}		
+
+		Handlebars.registerHelper('list', function(items, options) {
+			var out = "<ul>";
+
+			for(var i=0, l=items.length; i<l; i++) {
+			out = out + "<li>" + options.fn(items[i]) + "</li>";
+			}
+
+			return out + "</ul>";
+		});
+
+		$('#test').html(template(context));
+	</script>
+
+</body>
+
+</html>
