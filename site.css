@@ -10,3 +10,9 @@ html, body {
 	width: 70%;
 	background-color: lightgrey;
 }
+
+.section h2 {
+	text-align: center;
+	cursor: pointer; 
+	cursor: hand;
+}
