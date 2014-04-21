@@ -4,8 +4,8 @@
 <head>
 	<title>Luke Elliott's CV</title>
 
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="site.css">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -14,29 +14,76 @@
 			<h1>Luke Elliott <small>Software Developer</small></h1>
 		</header>
 
+		<div>
+            <h4>Contact details:</h4>
+            
+            <ul>
+                <li>Phone: +447546167287</li>
+                <li>Email: revlucio@gmail.com</li>
+                <li>Blog: www.irreverentcode.com</li>
+                <li>Address: SW4, London</li>
+            </ul>        
+        </div>
+
 		<div class="section">
-			<h2 id="experienceHeader">Work Experience</h2>
+			<h2 id="aboutMeHeader">About Me</h2>
+			<div id="aboutMe">
+				<p>
+                    I'm an Australian software developer living on London.
+                </p>
+                <p>
+                    I love technology and moved to London in 2013 to pursue my passions of travelling, city life and pub culture!
+                </p>
+			</div>
+		</div>
+
+		<div class="section">
+			<h2 id="experienceHeader">Experience</h2>
 			<div id="experience"></div>
 		</div>
 
-		<div class="sectionx">
+		<div class="section">
 			<h2 id="skillsHeader">Skills</h2>
 			<div id="skills">
 				<h4>Core Skills:</h4>
 				<ul>
 					<li>Visual Studio</li>
 					<li>C# .NET</li>
-					<li>MVC</li>
+					<li>ASP MVC</li>
 					<li>Agile - Scrum, Kanban</li>
-					<li></li>
+                    <li>SOLID Principles</li>
+                    <li>Javascript: JQuery, Knockout, Angular</li>
+                    <li>SQL Server</li>
+                    <li>Entity Framework</li>
+                    <li>nHibernate</li>
+                    <li>IoC: AutoFac, Unity, StructureMap</li>
+                    <li>TDD: nUnit, Moq, FakeItEasy</li>
+                    <li>HTML5, CSS3</li>
+                    <li>Contiuous Integration: TFS, TeamCity</li>
+                    <li>TFS, JIRA</li>
 				</ul>
+                <h4>Beginning:</h4>
+                <ul>
+                    <li>Python</li>
+                    <li>IronPython</li>
+                    <li>Scala</li>
+                    <li>PowerShell</li>
+                </ul>
+                <h4>Want to learn:</h4>
+                <ul>
+                    <li>Node.js</li>
+                    <li>Azure</li>
+                    <li>Continuous Deployment</li>
+                </ul>
 			</div>
 		</div>
 
 		<div class="section">
 			<h2 id="educationHeader">Education</h2>
 			<div id="education">
-				some education here
+				<ul>
+                    <li>Bachelor of Software Engineering <small>University of Canberra</small></li>
+                </ul>
 			</div>
 		</div>
 
@@ -48,7 +95,7 @@
 
 	<script id="job-template" type="text/x-handlebars-template">
 	  	<article>
-			<h3>{{company}} <small>{{role}}</small></h3>
+			<h3>{{role}} <small>{{company}}</small></h3>
 			<p>{{started}} - {{ended}}</p>
 			{{#list duties}}{{duty}}{{/list}}
 		</article>
